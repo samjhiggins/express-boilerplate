@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    @bundles.css.forEach(function(b){
+      <link rel="stylesheet" type="text/css" src="@b" />
+    })
+  </head>
+  <body>
+  <h1>Layout</h1>
+  @html.block('content')
+  <pre>
+    @html.raw( JSON.stringify(model))
+  </pre>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  @bundles.js.forEach(function(b){
+    <script type="text/javascript" src="@b"></script>
+  })
+  </body>
+</html>

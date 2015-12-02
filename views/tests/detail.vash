@@ -1,0 +1,6 @@
+@html.extend('layout', function(model){
+  @html.block('content', function(model){
+  <h3>Created:</h3>
+  @(new Date(model.created).toUTCString())
+  });
+});

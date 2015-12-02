@@ -1,0 +1,18 @@
+@html.extend('layout', function(model){
+  @html.block('content', function(model){
+  <form method="POST" data-ajax="true" data-ajax-url="/tests">
+    <input type="submit" value="New Random" />
+  </form>
+  <ul>
+  @model.keys.forEach(function(key){
+  <li>
+  <a href="/tests/@key">@key</a>
+  <form method="POST" data-ajax="true" data-ajax-url="/tests/delete">
+    <input type="hidden" name="key" value="@key" />
+    <input type="submit" value="Delete" />
+  </form>
+  </li>
+  })
+  </ul>
+  });
+});
